@@ -64,12 +64,12 @@ let scrabbleScorer = function (word) { //declare scrabbleScorer function with pa
    let score = 0; //initialize score to 0 - holder for total score
    word = word.toLowerCase(); //convert the input word to lower case
    for(let i = 0; i < word.length; i++) { //loop through each character in word from 0 or i=0 to length of word
-      score += Number(newPointStructure[word[i]]); //setting the score variable, += for adding values, number type conversion to convert value from newpointstructure, word[i] to find letter within word at index of i, which is zero
+      score += Number(newPointStructure[word[i]]); //setting the score variable, += for adding values, number type conversion to convert value from newpointstructure, word[i] to find letter within word at index of i, which is zero - is there a better way to do this?
    }
    return score; //sets the score for later pull
 }
 
-const scoringAlgorithms = [ //decale constant variable "scoringAlgorithms" using [] for an array assignment
+const scoringAlgorithms = [ //decale constant variable "scoringAlgorithms" using [] for an array assignment - do I need to organize this better?
    { name: "Simple Score", description: "Each letter is worth 1 point.", scorerFunction: simpleScorer }, //Simple Score, three keys name/description/scorerFunction
    { name: "Bonus Vowels", description: "Vowels are 3 pts, consonants are 1 pt.", scorerFunction: vowelBonusScorer }, //Bonus Vowels, three keys name/description/scorerFunction
    { name: "Scrabble", description: "The traditional scoring algorithm.", scorerFunction: scrabbleScorer} //Scrabble, three keys name/description/scorerFunction

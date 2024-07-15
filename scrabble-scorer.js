@@ -38,7 +38,6 @@ function initialPrompt() {
    //return word; //returning word for initializing with oldscrabblescorer function
    console.log("Let's play some scrabble!");
    let word = input.question("Enter a word to get a score: ")
-
    return word;
 };
 
@@ -61,13 +60,13 @@ let vowelBonusScorer = function (word) { //declaring vowerlBonusScorer - with an
    return score; //return total score after loop finishes interating through word's characters
 }
 
-let scrabbleScorer = function (word) { 
-   let score = 0;
-   word = word.toLowerCase();
-   for(let i = 0; i < word.length; i++) {
-      score += Number(newPointStructure[word[i]]);
+let scrabbleScorer = function (word) { //declare scrabbleScorer function with parameter "word"
+   let score = 0; //initialize score to 0 - holder for total score
+   word = word.toLowerCase(); //convert the input word to lower case
+   for(let i = 0; i < word.length; i++) { //loop through each character in word from 0 or i=0 to length of word
+      score += Number(newPointStructure[word[i]]); //setting the score variable, += for adding values, number type conversion to convert value from newpointstructure, word[i] to find letter within word at index of i, which is zero
    }
-   return score;
+   return score; //sets the score for later pull
 }
 
 const scoringAlgorithms = [ //decale constant variable "scoringAlgorithms" using [] for an array assignment
@@ -82,7 +81,7 @@ function scorerPrompt() {
    console.log("1 - Use the Vowel bonus scoring function (3 points per vowel)");
    console.log("2 - Use the Scrabble Scoring option (Default Scabble)");
    let choice = input.question("Enter 0, 1, or 2: "); //local declaring choice, providing question, then returning to constant function scoringAlgorithms
-   //bonus mission to not accept other choices
+   //bonus mission to not accept other choices tbd here or original question function
 
    return scoringAlgorithms[choice];
 }
